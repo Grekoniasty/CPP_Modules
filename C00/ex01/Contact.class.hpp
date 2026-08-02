@@ -12,6 +12,7 @@ class Contact
 		std::string _nickname;
 		std::string _phoneNumber;
 		std::string _darkestSecret;
+
 	public:
 		Contact();
 		~Contact();
