@@ -1,0 +1,66 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+std::string replaceAll(std::string line, const std::string& s1, const std::string& s2)
+{
+	// TODO: replace all occurrences of s1 with s2 in line
+	// You cannot use std::string::replace
+	// Hint: use find(), erase(), insert() or substr() + append()
+	size_t pos = 0;
+	while ((pos = line.find(s1, pos)) != std::string::npos)
+	{
+		line.erase(pos, s1.length());
+		line.insert(pos, s2);
+		pos += s2.length();
+	}
+	return (line);
+}
+
+int main(int argc, char **argv)
+{
+	if (argc != 4)
+	{
+		std::cerr << "Usage: ./sed <filename> <s1> <s2>" << std::endl;
+		return (1);
+	}
+
+	std::string filename = argv[1];
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+
+	if (s1.empty())
+	{
+		std::cerr << "Error: s1 cannot be empty" << std::endl;
+		return (1);
+	}
+
+	std::ifstream infile(filename.c_str());
+	if (!infile.is_open())
+	{
+		std::cerr << "Error: could not open file: " << filename << std::endl;
+		return (1);
+	}
+
+	std::ofstream outfile((filename + ".replace").c_str());
+	if (!outfile.is_open())
+	{
+		std::cerr << "Error: could not create output file" << std::endl;
+		infile.close();
+		return (1);
+	}
+
+	std::string line;
+	bool firstLine = true;
+	while (std::getline(infile, line))
+	{
+		if (!firstLine)
+			outfile << "\n";
+		outfile << replaceAll(line, s1, s2);
+		firstLine = false;
+	}
+
+	infile.close();
+	outfile.close();
+	return (0);
+}
