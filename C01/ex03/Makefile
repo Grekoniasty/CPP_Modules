@@ -1,24 +1,24 @@
-NAME    = HiThisIsBrain
+NAME    = violence
 CXX     = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-MAKEFLAGS 		= --no-print-directory -s
+MAKEFLAGS		= --no-print-directory -s
 
-SRCS    =  main.cpp
+SRCS    = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS    = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	echo "HiThisIsBrain compiled successfully!"
+	echo "violence compiled successfully!"
 
 clean:
 	rm -f $(OBJS)
-	echo "HiThisIsBrain object files cleaned!"
+	echo "violence object files cleaned!"
 
 fclean: clean
 	rm -f $(NAME)
-	echo "HiThisIsBrain cleaned completely!"
+	echo "violence cleaned completely!"
 
 re: fclean all
 

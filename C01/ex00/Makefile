@@ -3,7 +3,7 @@ CXX     = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 MAKEFLAGS 		= --no-print-directory -s
 
-SRCS    = zombies.cpp main.cpp zombies.hpp
+SRCS    = zombies.cpp main.cpp
 OBJS    = $(SRCS:.cpp=.o)
 
 all: $(NAME)
