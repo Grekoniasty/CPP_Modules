@@ -1,6 +1,6 @@
 NAME    = PhoneBook
 CXX     = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 MAKEFLAGS 		= --no-print-directory -s
 
 SRCS    = PhoneBook.cpp main.cpp Contact.cpp
