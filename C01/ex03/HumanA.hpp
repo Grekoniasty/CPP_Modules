@@ -2,7 +2,7 @@
 #define HUMANA_HPP
 
 #include "Weapon.hpp"
-//Reference, alawys has a weapon, cannot be NULL
+
 class HumanA
 {
 	private:

@@ -1,10 +1,10 @@
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef ZOMBIES_HPP
+#define ZOMBIES_HPP
 
 #include <iostream>
 #include <string>
 
-#define NUM_ZOMBIES 140
+#define NUM_ZOMBIES 3
 
 class Zombie
 {

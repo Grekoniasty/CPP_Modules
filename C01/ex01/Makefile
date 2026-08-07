@@ -4,6 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 MAKEFLAGS 		= --no-print-directory -s
 
 SRCS    = zombieHorde.cpp main.cpp zombies.cpp
+HEADERS = $(wildcard *.hpp)
 OBJS    = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -11,6 +12,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	echo "zombieHorde compiled successfully!"
+
+%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

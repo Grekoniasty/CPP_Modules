@@ -8,7 +8,7 @@ void Zombie::setName(std::string name) { _name = name; }
 Zombie::~Zombie() { std::cout << _name << " destroyed" << std::endl; }
 void Zombie::announce(void)
 {
-    std::cout << _name << ": BraiiiiiiinnnzzzzzzzzR..." << std::endl;
+    std::cout << _name << ": BraiiiiiiinnnzzzzzzzzZ..." << std::endl;
 }
 
 Zombie* newZombie(std::string name)

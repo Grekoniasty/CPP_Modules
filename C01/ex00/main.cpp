@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    randomChump("Marie Curie");
-    Zombie* heap = newZombie("Saddam Hussein");
+    randomChump("Benjamin Netanyahu");
+    Zombie* heap = newZombie("Donald J Trump");
     heap->announce();
     delete heap;
     return 0;

@@ -2,7 +2,7 @@
 #define HUMANB_HPP
 
 #include "Weapon.hpp"
-//Pointer, can be NULL, HumanB can be created without a weapon
+
 class HumanB
 {
 	private:

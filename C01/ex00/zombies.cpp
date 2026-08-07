@@ -12,7 +12,7 @@ Zombie::~Zombie()
 
 void Zombie::announce(void)
 {
-    std::cout << _name << ": BraiiiiiiinnnzzzzzzzzR..." << std::endl;
+    std::cout << _name << ": BraiiiiiiinnnzzzzzzzzZ..." << std::endl;
 }
 
 Zombie* newZombie(std::string name)
@@ -20,7 +20,7 @@ Zombie* newZombie(std::string name)
     return new Zombie(name);
 }
 
-void randomChump(std::string name)   // bez średnika!
+void randomChump(std::string name)
 {
     Zombie z(name);
     z.announce();

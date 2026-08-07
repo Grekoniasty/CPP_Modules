@@ -4,9 +4,6 @@
 
 std::string replaceAll(std::string line, const std::string& s1, const std::string& s2)
 {
-	// TODO: replace all occurrences of s1 with s2 in line
-	// You cannot use std::string::replace
-	// Hint: use find(), erase(), insert() or substr() + append()
 	size_t pos = 0;
 	while ((pos = line.find(s1, pos)) != std::string::npos)
 	{
