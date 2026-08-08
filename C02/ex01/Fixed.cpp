@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) : _integer(0)
@@ -24,13 +25,41 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
+Fixed::Fixed(const int n)
+{
+	std::cout << "Int constructor called" << std::endl;
+	_integer = n << _fract;
+}
+
+Fixed::Fixed(const float f)
+{
+	std::cout << "Float constructor called" << std::endl;
+	_integer = roundf(f * (1 << _fract));
+}
+
+float Fixed::toFloat(void) const
+{
+	return (float)_integer / (1 << _fract);
+}
+
+int Fixed::toInt(void) const
+{
+	return _integer >> _fract;
+}
+
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_integer);
 }
 
 void Fixed::setRawBits(int const raw)
 {
 	this->_integer = raw;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	(void)fixed;
+	return (out);
 }
